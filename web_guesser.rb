@@ -6,8 +6,10 @@ NUMBER = rand(100)
 
 get '/' do
   guess = params["guess"]
+  cheat = params['cheat']
+  # require 'pry';binding.pry
   message = check_guess(guess)
-  erb :index, :locals =>{:number => NUMBER, :message => message, :color => @color}
+  erb :index, :locals =>{:number => NUMBER, :message => message, :color => @color, :cheat => cheat}
 end
 
 
